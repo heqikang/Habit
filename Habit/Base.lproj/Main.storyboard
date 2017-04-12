@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Second View Controller-->
+        <!--Discover View Controller-->
         <scene sceneID="yKj-uP-uI1">
             <objects>
-                <viewController id="u6b-uu-RYc" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController id="u6b-uu-RYc" customClass="DiscoverViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kQR-I2-1p2"/>
                         <viewControllerLayoutGuide type="bottom" id="8BT-0a-OLg"/>
@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="2488.8000000000002" y="1294.9025487256372"/>
         </scene>
-        <!--Four View Controller-->
+        <!--Me View Controller-->
         <scene sceneID="mVD-OJ-j7K">
             <objects>
-                <viewController id="07r-Wx-RWj" customClass="FourViewController" sceneMemberID="viewController">
+                <viewController id="07r-Wx-RWj" customClass="MeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mn4-8N-QKz"/>
                         <viewControllerLayoutGuide type="bottom" id="ln3-HO-xis"/>
@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="2488.8000000000002" y="2676.6116941529235"/>
         </scene>
-        <!--Third View Controller-->
+        <!--Message View Controller-->
         <scene sceneID="vct-za-kdJ">
             <objects>
-                <viewController id="kBx-20-71v" customClass="ThirdViewController" sceneMemberID="viewController">
+                <viewController id="kBx-20-71v" customClass="MessageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m3N-UP-gAC"/>
                         <viewControllerLayoutGuide type="bottom" id="jOY-2Y-2sZ"/>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="2508" y="1996"/>
         </scene>
-        <!--First View Controller-->
+        <!--Habit View Controller-->
         <scene sceneID="9Y5-rV-vow">
             <objects>
-                <viewController id="IX4-qq-6X0" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController id="IX4-qq-6X0" customClass="HabitViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gvc-Xo-pBO"/>
                         <viewControllerLayoutGuide type="bottom" id="ico-ux-809"/>

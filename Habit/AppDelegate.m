@@ -37,6 +37,11 @@
     UITabBarController *tabVc = [self createTabBarController];
     self.window.rootViewController = tabVc;
     self.window.backgroundColor = [UIColor whiteColor];
+    // 设置所有导航栏的背景颜色
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:86/255.0 green:180/255.0 blue:86/255.0 alpha:1]];
+    
+    // 设置导航栏标题字体大小和颜色
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     return YES;
 }
