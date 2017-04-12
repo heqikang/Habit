@@ -12,7 +12,7 @@
         <!--Discover View Controller-->
         <scene sceneID="yKj-uP-uI1">
             <objects>
-                <viewController id="u6b-uu-RYc" customClass="DiscoverViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="discover" id="u6b-uu-RYc" customClass="DiscoverViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kQR-I2-1p2"/>
                         <viewControllerLayoutGuide type="bottom" id="8BT-0a-OLg"/>
@@ -31,7 +31,7 @@
         <!--Me View Controller-->
         <scene sceneID="mVD-OJ-j7K">
             <objects>
-                <viewController id="07r-Wx-RWj" customClass="MeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="me" id="07r-Wx-RWj" customClass="MeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mn4-8N-QKz"/>
                         <viewControllerLayoutGuide type="bottom" id="ln3-HO-xis"/>
@@ -41,7 +41,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kJx-5O-Yzq"/>
+                    <navigationItem key="navigationItem" id="kJx-5O-Yzq">
+                        <barButtonItem key="leftBarButtonItem" image="add_user.png" id="KYb-er-7jz"/>
+                        <barButtonItem key="rightBarButtonItem" image="setting.png" id="Ua8-Zl-NBO"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9QK-Hn-0he" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,7 +53,7 @@
         <!--Message View Controller-->
         <scene sceneID="vct-za-kdJ">
             <objects>
-                <viewController id="kBx-20-71v" customClass="MessageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="message" id="kBx-20-71v" customClass="MessageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m3N-UP-gAC"/>
                         <viewControllerLayoutGuide type="bottom" id="jOY-2Y-2sZ"/>
@@ -69,7 +72,7 @@
         <!--Habit View Controller-->
         <scene sceneID="9Y5-rV-vow">
             <objects>
-                <viewController id="IX4-qq-6X0" customClass="HabitViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="habit" id="IX4-qq-6X0" customClass="HabitViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gvc-Xo-pBO"/>
                         <viewControllerLayoutGuide type="bottom" id="ico-ux-809"/>
@@ -182,4 +185,8 @@
             <point key="canvasLocation" x="1549.5999999999999" y="2676.6116941529235"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add_user.png" width="22" height="16"/>
+        <image name="setting.png" width="20" height="20"/>
+    </resources>
 </document>

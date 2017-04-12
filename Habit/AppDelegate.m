@@ -37,27 +37,31 @@
     UITabBarController *tabVc = [self createTabBarController];
     self.window.rootViewController = tabVc;
     self.window.backgroundColor = [UIColor whiteColor];
-    // 设置所有导航栏的背景颜色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:86/255.0 green:180/255.0 blue:86/255.0 alpha:1]];
     
-    // 设置导航栏标题字体大小和颜色
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    // NavigationBar 按钮背景颜色 TarBar等相关颜色设置
+    [self settingColor];
     
     return YES;
 }
 
+#pragma mark -- 创建TabBarController
 - (UITabBarController *)createTabBarController
 {
     TabBarViewController *tabbarViewController = [[TabBarViewController alloc] init];
     
-    HabitViewController *habitViewController = (HabitViewController *)[self viewControllerWithTitle:@"习惯" normalImage:@"ring_normal.png" selectedImage:@"ring_selected.png" class:[HabitViewController class]];
     
-    DiscoverViewController *discoverViewController = (DiscoverViewController *)[self viewControllerWithTitle:@"发现" normalImage:@"leaf_normal.png" selectedImage:@"leaf_selected.png" class:[DiscoverViewController class]];
+    // 新建空白的页面
+//    HabitViewController *habitViewController = (HabitViewController *)[self viewControllerWithTitle:@"习惯" normalImage:@"ring_normal.png" selectedImage:@"ring_selected.png" class:[HabitViewController class]];
+//    DiscoverViewController *discoverViewController = (DiscoverViewController *)[self viewControllerWithTitle:@"发现" normalImage:@"leaf_normal.png" selectedImage:@"leaf_selected.png" class:[DiscoverViewController class]];
+//    MessageViewController *messageViewController = (MessageViewController *)[self viewControllerWithTitle:@"消息" normalImage:@"message_normal.png" selectedImage:@"message_selected.png" class:[MessageViewController class]];
+//    MeViewController *meViewController = (MeViewController *)[self viewControllerWithTitle:@"我的" normalImage:@"user_normal.png" selectedImage:@"user_selected.png" class:[MeViewController class]];
     
     
-    MessageViewController *messageViewController = (MessageViewController *)[self viewControllerWithTitle:@"消息" normalImage:@"message_normal.png" selectedImage:@"message_selected.png" class:[MessageViewController class]];
-    
-    MeViewController *meViewController = (MeViewController *)[self viewControllerWithTitle:@"我的" normalImage:@"user_normal.png" selectedImage:@"user_selected.png" class:[MeViewController class]];
+    // 通过StoryBoard 创建
+    HabitViewController *habitViewController = (HabitViewController *)[self viewControllerWithTitle:@"习惯" normalImage:@"ring_normal.png" selectedImage:@"ring_selected.png" storyBoardIdentify:@"habit"];
+    DiscoverViewController *discoverViewController = (DiscoverViewController *)[self viewControllerWithTitle:@"发现" normalImage:@"leaf_normal.png" selectedImage:@"leaf_selected.png" storyBoardIdentify:@"discover"];
+    MessageViewController *messageViewController = (MessageViewController *)[self viewControllerWithTitle:@"消息" normalImage:@"message_normal.png" selectedImage:@"message_selected.png" storyBoardIdentify:@"message"];
+    MeViewController *meViewController = (MeViewController *)[self viewControllerWithTitle:@"我的" normalImage:@"user_normal.png" selectedImage:@"user_selected.png" storyBoardIdentify:@"me"];
     
     self.habitNav = [[UINavigationController alloc] initWithRootViewController:habitViewController];
     
@@ -68,15 +72,49 @@
     self.meNav = [[UINavigationController alloc] initWithRootViewController:meViewController];
     
     tabbarViewController.viewControllers = @[self.habitNav, self.discoverNav,  self.messageNav, self.meNav];
-    // 设置tabbar标题默认颜色
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:86.0/255.0 green:86.0/255.0 blue:86.0/255.0 alpha:1],NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
-    // 设置tabbar标题选中颜色
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:86.0/255.0 green:180.0/255.0 blue:86.0/255.0 alpha:1], NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
     
     return tabbarViewController;
 }
 
-#pragma mark -- 设置TabBar默认状态和选中状态的图片、标题
+#pragma mark -- 设置NavigationBar TarBar等相关颜色
+- (void)settingColor
+{
+    // 设置NavigationBar的背景颜色
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:86/255.0 green:180/255.0 blue:86/255.0 alpha:1]];
+    
+    // 设置NavigationBar标题字体大小和颜色
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    // 设置NavigationBar按钮背景颜色
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    // 设置tabbar标题默认颜色
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:86.0/255.0 green:86.0/255.0 blue:86.0/255.0 alpha:1],NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+    // 设置tabbar标题选中颜色
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:86.0/255.0 green:180.0/255.0 blue:86.0/255.0 alpha:1], NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
+}
+
+#pragma mark -- 设置TabBar默认状态和选中状态的图片、标题(storyBoard)
+- (UIViewController *)viewControllerWithTitle:(NSString *)title normalImage:(NSString *)normalImage selectedImage:(NSString *)selectedImage storyBoardIdentify:(NSString *)identify
+{
+    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc  = [main instantiateViewControllerWithIdentifier:identify];
+    //设置标题
+    vc.title = title;
+    
+    //设置普通状态图片
+    UIImage *imageNormal = [UIImage imageNamed:normalImage];
+    imageNormal = [imageNormal imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    vc.tabBarItem.image = imageNormal;
+    
+    UIImage *imageSelected = [UIImage imageNamed:selectedImage];
+    imageSelected = [imageSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    vc.tabBarItem.selectedImage = imageSelected;
+    
+    return vc;
+}
+
+#pragma mark -- 设置TabBar默认状态和选中状态的图片、标题(新建页面)
 - (UIViewController *)viewControllerWithTitle:(NSString *)title normalImage:(NSString *)normalImage selectedImage:(NSString *)selectedImage class:(Class)class{
     
     UIViewController *vc  = [[class alloc] init];
