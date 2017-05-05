@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		654CBA61E36721A4D005B6E4 /* Pods_Habit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6499AAB27FC6D891BAA9D836 /* Pods_Habit.framework */; };
+		8629C34E1EAB55BC00D3C304 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8629C34C1EAB55BC00D3C304 /* TestViewController.m */; };
+		8629C34F1EAB55BC00D3C304 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8629C34D1EAB55BC00D3C304 /* TestViewController.xib */; };
+		864827C11EA49045005089E6 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 864827C01EA49045005089E6 /* HttpRequest.m */; };
 		865C35711E986A79001EDE19 /* SearchNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 865C35701E986A79001EDE19 /* SearchNetTool.m */; };
 		865C35741E986AF9001EDE19 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 865C35731E986AF9001EDE19 /* AFNetworkReachabilityManager.m */; };
 		865C35761E986C02001EDE19 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865C35751E986C02001EDE19 /* AFNetworking.framework */; };
@@ -71,6 +74,11 @@
 		3D91408669ACAD1BE8001236 /* Pods-Habit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Habit/Pods-Habit.debug.xcconfig"; sourceTree = "<group>"; };
 		496BF0F804977781C5868633 /* Pods-Habit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Habit/Pods-Habit.release.xcconfig"; sourceTree = "<group>"; };
 		6499AAB27FC6D891BAA9D836 /* Pods_Habit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Habit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8629C34B1EAB55BC00D3C304 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		8629C34C1EAB55BC00D3C304 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		8629C34D1EAB55BC00D3C304 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		864827BF1EA49045005089E6 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
+		864827C01EA49045005089E6 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
 		865C356F1E986A79001EDE19 /* SearchNetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchNetTool.h; sourceTree = "<group>"; };
 		865C35701E986A79001EDE19 /* SearchNetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchNetTool.m; sourceTree = "<group>"; };
 		865C35721E986AF9001EDE19 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
@@ -211,6 +219,8 @@
 		867C7A151E9761B40031F592 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				864827BF1EA49045005089E6 /* HttpRequest.h */,
+				864827C01EA49045005089E6 /* HttpRequest.m */,
 				865C35721E986AF9001EDE19 /* AFNetworkReachabilityManager.h */,
 				865C35731E986AF9001EDE19 /* AFNetworkReachabilityManager.m */,
 				865C356F1E986A79001EDE19 /* SearchNetTool.h */,
@@ -250,6 +260,9 @@
 				867C7A041E9761070031F592 /* ViewController.m */,
 				867C7A7E1E9767620031F592 /* TabBarViewController.h */,
 				867C7A7F1E9767620031F592 /* TabBarViewController.m */,
+				8629C34B1EAB55BC00D3C304 /* TestViewController.h */,
+				8629C34C1EAB55BC00D3C304 /* TestViewController.m */,
+				8629C34D1EAB55BC00D3C304 /* TestViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -465,6 +478,7 @@
 				86AECE451E9E131C003821D5 /* add_user@2x.png in Resources */,
 				86AECE691E9E13B9003821D5 /* message_normal@2x.png in Resources */,
 				86AECE671E9E13B9003821D5 /* leaf_selected@3x.png in Resources */,
+				8629C34F1EAB55BC00D3C304 /* TestViewController.xib in Resources */,
 				86AECE781E9E13B9003821D5 /* user_selected@2x.png in Resources */,
 				86AECE6A1E9E13B9003821D5 /* message_normal@3x.png in Resources */,
 				86AECE8D1E9E22F4003821D5 /* hide_selected.png in Resources */,
@@ -537,6 +551,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				867C7A801E9767620031F592 /* TabBarViewController.m in Sources */,
+				8629C34E1EAB55BC00D3C304 /* TestViewController.m in Sources */,
+				864827C11EA49045005089E6 /* HttpRequest.m in Sources */,
 				865C35711E986A79001EDE19 /* SearchNetTool.m in Sources */,
 				867C7A051E9761070031F592 /* ViewController.m in Sources */,
 				867C7AB01E977E480031F592 /* MessageViewController.m in Sources */,

@@ -14,6 +14,7 @@
 #import "MessageViewController.h"
 #import "MeViewController.h"
 #import "SearchNetTool.h"
+#import "TestViewController.h"
 
 @interface AppDelegate ()
 
@@ -35,11 +36,12 @@
     [SearchNetTool searchNet];
     
     UITabBarController *tabVc = [self createTabBarController];
-    self.window.rootViewController = tabVc;
+    TestViewController *test = [[TestViewController alloc] initWithNibName:@"TestViewController" bundle:nil];
+    self.window.rootViewController = test;
     self.window.backgroundColor = [UIColor whiteColor];
     
     // NavigationBar 按钮背景颜色 TarBar等相关颜色设置
-    [self settingColor];
+//    [self settingColor];
     
     return YES;
 }

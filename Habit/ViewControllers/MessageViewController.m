@@ -7,6 +7,7 @@
 //
 
 #import "MessageViewController.h"
+#import "HttpRequest.h"
 
 @interface MessageViewController ()
 
@@ -17,6 +18,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self getData];
+}
+
+- (void)getData
+{
+    // http://getazlnx001.chinacloudapp.cn:8080/lovewall?method=open_lovewallbycompanyid&company_id=1
+    
+    [HttpRequest requestWithURLString:@"http://getazlnx001.chinacloudapp.cn:8080/lovewall?method=open_lovewallbycompanyid&company_id=1" parameters:nil type:HttpRequestTypeGet success:^(id responseObject) {
+        NSArray *array = [NSArray array];
+        NSError *error = nil;
+        if (responseObject) {
+            array = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
+            NSLog(@"array:%@", array);
+            for (NSDictionary *dict in array) {
+                
+            }
+            
+        }else
+        {
+            NSLog(@"网络请求失败");
+        }
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
